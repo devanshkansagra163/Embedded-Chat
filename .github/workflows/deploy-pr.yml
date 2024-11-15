@@ -13,7 +13,13 @@ jobs:
     steps:
       - name: Extract PR Number from Workflow Run
         id: extract_pr_number
-        run: echo "PR_NUMBER=${{ github.event.workflow_run.pull_requests[0].number }}" >> $GITHUB_ENV
+        run: |
+          if [ -n "${{ github.event.workflow_run.pull_requests }}" ]; then
+            echo "PR_NUMBER=${{ github.event.workflow_run.pull_requests[0].number }}" >> $GITHUB_ENV
+          else
+            echo "Error: No pull request found in workflow run context."
+            exit 1
+          fi
 
       - name: Check PR Approval Status
         id: approval_check
