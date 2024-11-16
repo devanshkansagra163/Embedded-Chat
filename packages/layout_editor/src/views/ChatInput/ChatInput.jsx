@@ -34,7 +34,7 @@ const ChatInput = () => {
           <Input
             textArea
             rows={1}
-            placeholder="Message"
+            placeholder="Message from old acc"
             css={styles.textInput}
             onBlur={handleBlur}
             onFocus={handleFocus}
