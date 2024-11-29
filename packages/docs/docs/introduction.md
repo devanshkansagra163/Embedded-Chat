@@ -1,5 +1,5 @@
 ---
-title: Introduction
+title: EmbeddedChat Introduction
 ---
 
 <!-- <h1 align='center'>Embedded Chat: A staple in excellent customer service</h1> -->
